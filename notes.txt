@@ -1,10 +1,12 @@
 asset
 yield
 component
+class activity
 -
 ajax
 -
 Laravel Jetstream
 live wire
-
-
+-
+% migrations not completed
+auth can't achive

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,20 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/home',[HomeController::class,'auth'])->name('home');
+
+Route::group([
+    'prefix'=>'hotel'],
+    function(){
+        Route::get('about',[HomeController::class,'about'])->name('about');
+        Route::get('blogDetails',[HomeController::class,'blogDetails'])->name('blogDetails');
+        Route::get('blog',[HomeController::class,'blog'])->name('blog');
+        Route::get('contact',[HomeController::class,'contact'])->name('contact');
+        Route::get('index',[HomeController::class,'index'])->name('index');
+        Route::get('main',[HomeController::class,'main'])->name('main');
+        Route::get('roomDetails',[HomeController::class,'roomDetails'])->name('roomDetails');
+        Route::get('rooms',[HomeController::class,'rooms'])->name('rooms');
+
+    }
+);
